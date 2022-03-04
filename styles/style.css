@@ -26,7 +26,7 @@
         align-items: center;
         border-radius: 15px;
         background-color: white;
-        overflow: hidden;
+        position: relative;
         
     }
 
@@ -44,18 +44,27 @@
         justify-content: space-between;
         cursor: pointer;
     }
+
+    .box-img {
+        position: absolute;
+        left: -100px;
+        bottom: 26%;
+        z-index: 9;
+    }
     
-    .womanImage{
-        margin-left: -10%;
-        width: 60%;
+    .divWomanImage{
+        width: 50%;
         height: 100%;
         background-image: url("../images/bg-pattern-desktop.svg");
         background-repeat: no-repeat;
-        background-position: 125% 65%;
-        background-size: 160%;
+        background-position: 118% 76%;
+        background-size: 190%;
+        overflow: hidden;
     }
-    .womanImage img {
-        width: 85%;
+    .divWomanImage img {
+        position: relative;
+        left: -16%;
+        width: 100%;
         margin: 12% auto;
     }
 
@@ -84,6 +93,10 @@
     p + div {
         margin-bottom: 10px;
     }
+
+    .arrow{
+        transition:ease 0.5s;
+    }
     
 
     .rotate .titleQuestion img {
@@ -91,3 +104,5 @@
         transform: rotate(180deg);
         
     }
+
+   
