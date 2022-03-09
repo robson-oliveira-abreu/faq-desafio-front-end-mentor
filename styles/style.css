@@ -5,25 +5,35 @@
         margin: 0;
         padding: 0;
     }
+    :root {
+        font-size: 62.5%;
+    }
 
     body {
+        display: flex;
+        justify-content: center;
         height: 100vh;
         width: 100vw;
-        align-items: center;
+        align-items: center;        
         background: linear-gradient(to top, hsl(240, 73%, 65%), hsl(273, 75%, 66%));
-        font-size: 12px;
         font-family: 'Kumbh Sans', sans-serif;
-        overflow: hidden;
+        overflow: scroll;
+        -ms-overflow-style: none;  
+        scrollbar-width: none;
         
     }
+    body::-webkit-scrollbar {
+        display: none;
+      }
     
     .container{
         display: flex;
-        max-width: 980px;
-        width: 65%;
-        height: 70vh;
+        justify-content: space-between;
+        max-width: 880px;
+        width: 85%;    
+        height: 100%;
+        min-height: 300px;
         max-height: 490px;
-        margin: 7.5% auto;
         align-items: center;
         border-radius: 15px;
         background-color: white;
@@ -37,7 +47,13 @@
     }
     
     .content {
-        width: 40%;
+        width: 38%;
+        margin-right: 8rem;
+    }
+
+    .question {
+        padding-bottom: 2rem;
+        border-bottom: 1px solid hsl(240, 5%, 91%);
     }
 
     .titleQuestion {
@@ -48,35 +64,39 @@
 
     .box-img {
         position: absolute;
-        left: -100px;
-        bottom: 26%;
+        left: -10%;
+        top: 50%;
+        margin-top: -5%;
+        width: 20%;
         z-index: 9;
     }
     
     .divWomanImage{
-        width: 50%;
+        width: 60%;
         height: 100%;
         background-image: url("../images/bg-pattern-desktop.svg");
         background-repeat: no-repeat;
-        background-position: 118% 76%;
+        background-position: 118% 50%;
         background-size: 190%;
         overflow: hidden;
     }
     .divWomanImage img {
         position: relative;
         left: -16%;
-        width: 100%;
-        max-width: 442px;
-        margin: 12% auto;
+        top: 50%;
+        margin-top: -36%;
+        width: 96%;
     }
 
     .title {
-        font-size: 1.2em;
+        padding-bottom: 2rem;
+        font-size: 3rem;
         font-weight: 700;
     }
 
     .text{
-        font-size: 1em;
+        margin-top: 1.2rem;
+        font-size: 1.2rem;
     }
 
     .invisible .text{
@@ -84,8 +104,12 @@
     }
 
     .titleText {
-        font-size: 1.1em;
+        font-size: 1.4rem;
         font-weight: 700;
+    }
+
+    .titleQuestion:hover {
+        color: hsl(14, 88%, 65%) ;
     }
 
     .invisible .titleText {
@@ -104,6 +128,83 @@
     .rotate .titleQuestion img {
        
         transform: rotate(180deg);
+        
+    }
+
+    @media (max-width: 1024px) {
+        :root {
+            font-size: 56%;
+        }
+        .content{
+            margin-right: 4rem;
+        }
+
+    }
+
+    @media (max-width: 700px) {
+        :root {
+            font-size: 62.5%;
+        }
+        .container {
+            flex-direction: column;
+            justify-content: flex-start;
+            height: 70%;
+            max-height: 70%;
+            margin: 25% 0 0 ;
+        }
+        .divWomanImage {
+            overflow: visible;
+            width: auto;
+            height: auto;
+            max-width: 70%;
+            margin-bottom: 5%;
+            
+            top: 0;
+            left: 0;
+            background-position:  0% 100%;
+            background-size: 100%;
+        }
+        .divWomanImage img {
+            position: relative;
+            left: 0;
+            top: -20%;
+            
+            
+        }
+        .content {
+            width: 80%;
+            margin-right: 0;
+        }
+        .content h1 {
+            text-align: center;
+        }
+        .box-img {
+            
+            left: 50%;
+            top: -3%;
+            margin-left: -34%;
+            width: 20%;
+            z-index: 9;
+        }
+        .titleQuestion:hover {
+            color: #000 ;
+        }
+    }
+
+    @media (max-height: 700px) , (max-width: 500px) {
+        :root {
+            font-size: 50%;
+        }
+    }
+    @media (max-height: 650px), (max-width: 700px) {
+        .content {
+            overflow-y: scroll;
+            -ms-overflow-style: none;  
+            scrollbar-width: none;
+        }
+        .content::-webkit-scrollbar {
+            display: none;
+        }
         
     }
 
